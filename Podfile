@@ -7,5 +7,6 @@ target 'iOSTestMarvel' do
 
   # Pods for iOSTestMarvel
   pod 'RealmSwift'
+  pod 'SwiftHash'
 
 end
