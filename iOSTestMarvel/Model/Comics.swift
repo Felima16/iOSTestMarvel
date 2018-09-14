@@ -74,30 +74,4 @@ class Comics: Object, Decodable{
     
 }
 
-class Thumbnail: Object, Codable{
-    @objc dynamic var path:String = ""
-    @objc dynamic var ext:String = ""
-    
-    private enum ThumbnailCodingKeys:String,CodingKey{
-        case ext = "extension"
-        case path = "path"
-    }
-}
 
-class Dates: Object, Codable{
-    @objc dynamic var type:String = ""
-    @objc dynamic var date:String = ""
-}
-
-class Prices: Object, Codable{
-    @objc dynamic var type:String = ""
-    @objc dynamic var price:Int = 0
-}
-
-class Item: Object, Codable{
-    @objc dynamic var name:String = ""
-}
-
-enum ItemCodingKeys: String, CodingKey {
-    case items
-}

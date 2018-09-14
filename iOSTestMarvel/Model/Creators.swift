@@ -39,3 +39,11 @@ class Creators: Object, Decodable{
         super.init(realm: realm, schema: schema)
     }
 }
+
+class Item: Object, Codable{
+    @objc dynamic var name:String = ""
+}
+
+enum ItemCodingKeys: String, CodingKey {
+    case items
+}

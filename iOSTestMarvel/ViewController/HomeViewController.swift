@@ -53,8 +53,8 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout, UICollectionV
         cell.titleLabel.text = localMan.allComics[indexPath.row].title
         cell.dateLabel.text = localMan.allComics[indexPath.row].dates[0].date
         
-        let imagePath = "\(localMan.allComics[indexPath.row].thumbnail?.path).\(localMan.allComics[indexPath.row].thumbnail?.ext)"
-        
+        let imagePath = "\(localMan.allComics[indexPath.row].thumbnail?.path ?? "").\(localMan.allComics[indexPath.row].thumbnail?.ext ?? "")"
+        print(imagePath)
         if let url = URL(string: imagePath){
             let data = try? Data(contentsOf:url)
             cell.comicImageView.image = UIImage(data: data!)

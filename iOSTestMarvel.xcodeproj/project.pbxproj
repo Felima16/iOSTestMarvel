@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D62F399214C2FAA00B6676D /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D62F398214C2FAA00B6676D /* Thumbnail.swift */; };
+		6D62F39B214C2FD700B6676D /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D62F39A214C2FD700B6676D /* Dates.swift */; };
+		6D62F39D214C30A100B6676D /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D62F39C214C30A100B6676D /* Price.swift */; };
+		6D62F39F214C3E8200B6676D /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D62F39E214C3E8200B6676D /* FavoritesViewController.swift */; };
 		6D70F4742149AAF800FE40C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D70F4732149AAF800FE40C0 /* AppDelegate.swift */; };
 		6D70F4762149AAF800FE40C0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D70F4752149AAF800FE40C0 /* HomeViewController.swift */; };
 		6D70F4792149AAF800FE40C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D70F4772149AAF800FE40C0 /* Main.storyboard */; };
@@ -25,6 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D62F398214C2FAA00B6676D /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
+		6D62F39A214C2FD700B6676D /* Dates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
+		6D62F39C214C30A100B6676D /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
+		6D62F39E214C3E8200B6676D /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		6D70F4702149AAF800FE40C0 /* iOSTestMarvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTestMarvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D70F4732149AAF800FE40C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D70F4752149AAF800FE40C0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +116,9 @@
 				6DF41DCC214B71BE004E196A /* Characters.swift */,
 				6DF41DCE214B71F2004E196A /* Creators.swift */,
 				6DF41DD0214B7A70004E196A /* Results.swift */,
+				6D62F398214C2FAA00B6676D /* Thumbnail.swift */,
+				6D62F39A214C2FD700B6676D /* Dates.swift */,
+				6D62F39C214C30A100B6676D /* Price.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -117,6 +128,7 @@
 			children = (
 				6D70F4752149AAF800FE40C0 /* HomeViewController.swift */,
 				6DF41DCA214B62BD004E196A /* DetailsViewController.swift */,
+				6D62F39E214C3E8200B6676D /* FavoritesViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -280,15 +292,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D70F4762149AAF800FE40C0 /* HomeViewController.swift in Sources */,
+				6D62F39D214C30A100B6676D /* Price.swift in Sources */,
 				6D70F48E214A64E200FE40C0 /* Comics.swift in Sources */,
+				6D62F399214C2FAA00B6676D /* Thumbnail.swift in Sources */,
 				6DF41DC5214B5A70004E196A /* LocalManager.swift in Sources */,
 				6DF41DCB214B62BD004E196A /* DetailsViewController.swift in Sources */,
 				6DF41DCD214B71BE004E196A /* Characters.swift in Sources */,
 				6D70F48C214A63E200FE40C0 /* API.swift in Sources */,
 				6D70F4742149AAF800FE40C0 /* AppDelegate.swift in Sources */,
+				6D62F39B214C2FD700B6676D /* Dates.swift in Sources */,
 				6DF41DD1214B7A70004E196A /* Results.swift in Sources */,
 				6DF41DC9214B5DFF004E196A /* FavCell.swift in Sources */,
 				6DF41DCF214B71F2004E196A /* Creators.swift in Sources */,
+				6D62F39F214C3E8200B6676D /* FavoritesViewController.swift in Sources */,
 				6DF41DC7214B5C49004E196A /* ComicCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,7 +453,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7NBD68U8QX;
 				INFOPLIST_FILE = iOSTestMarvel/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = FeLima.iOSTestMarvel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -453,7 +472,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7NBD68U8QX;
 				INFOPLIST_FILE = iOSTestMarvel/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = FeLima.iOSTestMarvel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
