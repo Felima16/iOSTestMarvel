@@ -51,10 +51,10 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout, UICollectionV
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ComicCell
         cell.titleLabel.text = localMan.allComics[indexPath.row].title
-        cell.dateLabel.text = localMan.allComics[indexPath.row].dates[0].date
+        let date = Utils.convertStringToDate(date: localMan.allComics[indexPath.row].dates[0].date)
+        cell.dateLabel.text = "Publicação \(date.toMediumDateString())"
         
         let imagePath = "\(localMan.allComics[indexPath.row].thumbnail?.path ?? "").\(localMan.allComics[indexPath.row].thumbnail?.ext ?? "")"
-        print(imagePath)
         if let url = URL(string: imagePath){
             let data = try? Data(contentsOf:url)
             cell.comicImageView.image = UIImage(data: data!)
@@ -89,7 +89,7 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detail = storyboard?.instantiateViewController(withIdentifier: "detailsViewController") as! DetailsViewController
-        detail.index = indexPath.row
+        detail.comic = localMan.allComics[indexPath.row]
         self.navigationController?.pushViewController(detail, animated: true)
     }
     
@@ -99,5 +99,18 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout, UICollectionV
                 loadCollection()
             }
         }
+    }
+}
+
+extension Date{
+    
+    func toMediumDateString() -> String{
+        //Get Short Time String
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.locale = Locale.current
+        let timeString = formatter.string(from: self as Date)
+        
+        return timeString
     }
 }

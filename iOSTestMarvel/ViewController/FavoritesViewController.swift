@@ -17,6 +17,10 @@ class FavoritesViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        favoritesTableView.reloadData()
+    }
 
 }
 
@@ -29,6 +33,13 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "favComicCell") as! FavCell
         cell.nameLabel.text = localMan.comics[indexPath.row].title
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detail = storyboard?.instantiateViewController(withIdentifier: "detailsViewController") as! DetailsViewController
+        
+        detail.comic = localMan.comics[indexPath.row]
+        self.navigationController?.pushViewController(detail, animated: true)
     }
     
     

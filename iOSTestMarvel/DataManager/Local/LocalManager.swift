@@ -38,7 +38,7 @@ class LocalManager: NSObject {
     }
     
     func isExistComic(comic:String) -> Bool{
-        let predicate = NSPredicate(format: "name = %@", comic)
+        let predicate = NSPredicate(format: "title = %@", comic)
         let comicsRealm = realm.objects(Comics.self).filter(predicate)
         
         if comicsRealm.count > 0{
